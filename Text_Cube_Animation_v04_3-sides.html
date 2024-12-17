@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Cube Animation</title>
+    <style>
+        .container {
+            width: 400px;
+            height: 100px;
+            position: relative;
+            perspective: 1000px;
+            left: calc(50% - 180px);
+            top: 100px;
+        }
+
+        #cube {
+            width: 500px;
+            height: 100px;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: rotate 5s infinite ease;
+        }
+
+        #cube figure {
+            margin: 0;
+            width: 350px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            font-family: 'Raleway', sans-serif;
+            font-size: 75px;
+            font-weight: 800;
+            backface-visibility: hidden;
+        }
+
+        #cube .cube1 {
+            transform: rotateX(0deg) translateZ(50px);
+            color: #E91E63;
+        }
+
+        #cube .cube2 {
+            transform: rotateX(120deg) translateZ(50px);
+            color: #9C27B0;
+        }
+
+        #cube .cube3 {
+            transform: rotateX(240deg) translateZ(50px);
+            color: #2196F3;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotateX(0deg);
+            }
+
+            33.33% {
+                transform: rotateX(120deg);
+            }
+
+            66.66% {
+                transform: rotateX(240deg);
+            }
+
+            100% {
+                transform: rotateX(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <div id="cube">
+            <figure class="cube1">Success.</figure>
+            <figure class="cube2">History.</figure>
+            <figure class="cube3">Growth.</figure>
+        </div>
+    </section>
+</body>
+
+</html>
