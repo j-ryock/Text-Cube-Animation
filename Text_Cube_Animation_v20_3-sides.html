@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Cube Animation</title>
+    <style>
+        .container {
+            width: 919px;
+            height: 100px;
+            position: relative;
+            perspective: 1000px;
+            text-align: center;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 100px;
+        }
+
+        #cube {
+            width: 919px;
+            height: 100px;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: rotate 9s infinite ease-in-out;
+        }
+
+        #cube figure {
+            margin: 0;
+            width: 919px;
+            height: 100px;
+            position: absolute;
+            font-family: Arial, sans-serif;
+            font-size: 75px;
+            font-weight: 800;
+            backface-visibility: hidden;
+            border: 1px solid red;
+        }
+
+        #cube .cube1 {
+            transform: rotateY(0deg) translateZ(50px);
+            animation: text1Animation 9s infinite ease-in-out;
+            color: red;
+        }
+
+        #cube .cube2 {
+            transform: rotateX(-120deg) translateZ(50px);
+            animation: text2Animation 9s infinite ease-in-out;
+            color: blue;
+        }
+
+        #cube .cube3 {
+            transform: rotateX(-240deg) translateZ(50px);
+            animation: text3Animation 9s infinite ease-in-out;
+            color: green;
+        }
+
+        @keyframes rotate {
+            0% {transform: rotateX(0deg);}
+            33.33% {transform: rotateX(120deg);}
+            66.66% {transform: rotateX(240deg);}
+            100% {transform: rotateX(360deg);}
+        }
+
+        @keyframes text1Animation {
+            0% {opacity: 1;}
+            33% {opacity: 0;}   
+            100% {opacity: 1;}
+        }
+
+        @keyframes text2Animation {
+            0% {opacity: 0;}
+            16% {opacity: 1;}
+            73% {opacity: 0;}
+            100% {opacity: 0;}
+        }
+
+        @keyframes text3Animation {
+            0% {opacity: 0;}
+            57% {opacity: 1;}
+            100% {opacity: 0;}
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <div id="cube">
+            <figure class="cube1">One.</figure>
+            <figure class="cube2">Two.</figure>
+            <figure class="cube3">Three.</figure>
+        </div>
+    </section>
+</body>
+
+</html>
